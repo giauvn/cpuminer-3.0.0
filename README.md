@@ -6,6 +6,11 @@ cpuminer-multi
 This is a multi-threaded CPU miner,
 fork of [pooler](//github.com/pooler)'s cpuminer (see AUTHORS for list of contributors).
 
+Download
+========
+ * Windows releases: https://github.com/tpruvot/cpuminer-multi/releases
+ * Git tree:   https://github.com/tpruvot/cpuminer-multi
+   * Clone with `git clone https://github.com/tpruvot/cpuminer-multi`
 Build
 =====
 
