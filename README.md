@@ -15,7 +15,7 @@ sudo apt update
 sudo apt upgrade -y
 sudo apt-get install -y automake autoconf pkg-config libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev zlib1g-dev make g++ libtool
 sudo apt install -y wget git proot automake autoconf pkg-config libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev zlib1g-dev make g++ build-essential yasm libboost-all-dev libdb++-dev dos2unix unzip
-git clone https://github.com/giauvn/cpuminer-v3.0.0.git
+git clone https://github.com/giauvn/cpuminer-3.0.0.git
 cd cpuminer-3.0.0
 for exynos
 sudo ./build-linux-arm.sh
