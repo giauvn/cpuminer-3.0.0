@@ -6,53 +6,6 @@ cpuminer-multi
 This is a multi-threaded CPU miner,
 fork of [pooler](//github.com/pooler)'s cpuminer (see AUTHORS for list of contributors).
 
-Download
-========
- * Windows releases: https://github.com/tpruvot/cpuminer-multi/releases
- * Git tree:   https://github.com/tpruvot/cpuminer-multi
-   * Clone with `git clone https://github.com/tpruvot/cpuminer-multi`
-Build
-=====
-
-#### Userland/ubuntu for android:
-```
-sudo apt update
-sudo apt upgrade -y
-sudo apt-get install -y automake autoconf pkg-config libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev zlib1g-dev make g++ libtool
-sudo apt install -y wget git proot automake autoconf pkg-config libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev zlib1g-dev make g++ build-essential yasm libboost-all-dev libdb++-dev dos2unix unzip
-git clone https://github.com/giauvn/cpuminer-3.0.0.git
-cd cpuminer-3.0.0
-for exynos
-sudo ./build-linux-arm.sh
-for snapdragon
-sudo ./build.sh
-sudo ./cpuminer -a minotaurx  -o stratum+tcp://stratum-na.rplant.xyz:7068 -u RCeuCL6JoYMUTUK4uH2BKuMQe5uw6XDeWY.J7pro
-```
-
-#### Basic *nix build instructions:
- * just use `./build.sh`
-_OR_
-
-```
- ./autogen.sh	# only needed if building from git repo
- ./nomacro.pl	# only needed if building on Mac OS X or with Clang
- ./configure CFLAGS="*-march=native*" --with-crypto --with-curl
- # Use -march=native if building for a single machine
- make
-```
-
-#### Note for Debian/Ubuntu users:
-
-```
- apt-get install automake autoconf pkg-config libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev zlib1g-dev make g++ libtool
-```
-
-#### if build with ubuntu on android:
-
-```
-Use
-./build-android.sh
-```
 
 Algorithms
 ==========
@@ -137,6 +90,62 @@ Algorithms
  * ✓ __yescryptR16__ (Goldcash [GOLD] Eli [ELI])
  * ✓ __yescryptR32__ (Documentchain [DMS])
  * ✓ __zr5__ (Ziftrcoin [ZRC])
+
+#### Implemented, but untested
+ * ? hefty1 (Heavycoin)
+ * ? keccak (Maxcoin  HelixCoin, CryptoMeth, Galleon, 365coin, Slothcoin, BitcointalkCoin)
+ * ? keccakc (Creativecoin)
+ * ? luffa (Joincoin, Doomcoin)
+ * ? rainforest
+ * ? shavite3 (INKcoin)
+
+#### Planned support for
+ * *scrypt-jane* (YaCoin, CopperBars, Pennies, Tickets, etc..)
+ 
+Dependencies
+============
+ * libcurl http://curl.haxx.se/libcurl/
+ * jansson http://www.digip.org/jansson/ (jansson source is included in-tree)
+ * openssl libcrypto https://www.openssl.org/
+ * pthreads
+ * zlib (for curl/ssl)
+
+Download
+========
+ * Windows releases: https://github.com/tpruvot/cpuminer-multi/releases
+ * Git tree:   https://github.com/tpruvot/cpuminer-multi
+   * Clone with `git clone https://github.com/tpruvot/cpuminer-multi`
+
+Build
+=====
+
+#### Userland/ubuntu for android:
+ * Command 
+	* sudo apt update
+	* sudo apt upgrade -y
+	* sudo apt-get install -y automake autoconf pkg-config libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev zlib1g-dev make g++ libtool
+	* sudo apt install -y wget git proot automake autoconf pkg-config libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev zlib1g-dev make g++ build-essential yasm libboost-all-dev libdb++-dev dos2unix unzip
+	* git clone https://github.com/giauvn/cpuminer-3.0.0.git
+	* sudo chmod -R +x cpuminer-3.0.0
+	* cd cpuminer-3.0.0
+ * for exynos
+	* sudo ./build-linux-arm.sh
+ * for snapdragon
+	* sudo ./build.sh
+	* sudo ./cpuminer -a minotaurx  -o stratum+tcp://stratum-na.rplant.xyz:7068 -u RCeuCL6JoYMUTUK4uH2BKuMQe5uw6XDeWY.J7pro
+
+#### Note for Debian/Ubuntu users:
+
+```
+ apt-get install automake autoconf pkg-config libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev zlib1g-dev make g++ libtool
+```
+
+#### if build with ubuntu on android:
+
+```
+Use
+./build-android.sh
+```
 
 Usage instructions
 ==================
